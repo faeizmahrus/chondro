@@ -22,7 +22,7 @@ dnf install -y intel-media-driver libva-intel-driver
 dnf install -y mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld --allowerasing
 
 # Install additional firmware
-dnf install -y "\*-firmware"
+dnf install -y \*-firmware
 
 # Install other stuff
 dnf install -y fish zsh nu tcsh #Install shells
