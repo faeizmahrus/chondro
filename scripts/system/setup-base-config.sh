@@ -25,5 +25,5 @@ dnf install -y mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld --allowera
 dnf install -y fish zsh nu tcsh #Install shells
 dnf install -y git distrobox syncthing #Install extras
 
-# Refresh stuff that relies on GStreamer
-dnf update @core @multimedia
+# Updoot
+dnf update -y
