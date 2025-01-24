@@ -13,7 +13,8 @@ RUN ./build-chondro/scripts/system/setup-multilang.sh && \
 
 RUN ./build-chondro/scripts/system/install-syncthing.sh && \
     ./build-chondro/scripts/system/install-browser-chromium.sh && \
-    ./build-chondro/scripts/system/remove-browser-firefox.sh
+    ./build-chondro/scripts/system/remove-browser-firefox.sh && \
+    ./build-chondro/scripts/system/remove-gnome-bloat.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro

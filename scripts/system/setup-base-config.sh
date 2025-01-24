@@ -21,9 +21,12 @@ dnf install -y intel-media-driver libva-intel-driver
 # Install AMD Drivers
 dnf install -y mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld --allowerasing
 
+# Install additional firmware
+dnf install -y "\*-firmware"
+
 # Install other stuff
 dnf install -y fish zsh nu tcsh #Install shells
-dnf install -y git distrobox syncthing #Install extras
+dnf install -y git curl wget distrobox #Install extras
 
 # Updoot
 dnf update -y
