@@ -21,10 +21,10 @@ RUN ./build-chondro/scripts/apps/install-syncthing.sh && \
     ./build-chondro/scripts/apps/install-browser-chromium.sh
 
 ## Fix comeposefs error
-#RUN ./build-chondro/scripts/fixes/fix-composefs-error.sh
+RUN ./build-chondro/scripts/fixes/fix-composefs-error.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro
 
 ## Commit to Registry
-RUN ostree container commit
+RUN ostree container commit && tree /usr/lib/modules && bootc container lint
