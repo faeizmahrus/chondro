@@ -9,7 +9,7 @@ dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-
 dnf update -y
 dnf install -y rpmfusion-free-release rpmfusion-nonfree-release --allowerasing
 dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
-dnf config-manager --enable fedora-cisco-openh264
+dnf config-manager setopt fedora-cisco-openh264.enabled=1
 dnf update -y @core
 
 # Install codec stuff
