@@ -14,6 +14,7 @@ FROM quay.io/fedora/fedora-silverblue:41
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 ## Copy stuff
+RUN mkdir -p /build-chondro /build-chondro/scripts /build-chondro/files/
 COPY scripts/ /build-chondro/scripts/
 COPY files/ /build-chondro/files/
 
@@ -28,5 +29,8 @@ RUN ./build-chondro/scripts/install-syncthing.sh && \
     ./build-chondro/scripts/install-browser-chromium.sh && \
     ./build-chondro/scripts/remove-browser-firefox.sh
 
+
+## Cleanup
+RUN rm -rf /build-chondro
 ## Commit to Registry
 RUN ostree container commit && bootc container lint
