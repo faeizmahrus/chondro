@@ -19,15 +19,15 @@ COPY scripts/ /build-chondro/scripts/
 COPY files/ /build-chondro/files/
 
 ## Run stuff
-RUN chmod +x /build-chondro/scripts/*
-RUN ./build-chondro/scripts/setup-base-config.sh
-RUN ./build-chondro/scripts/setup-virtualization.sh
-RUN ./build-chondro/scripts/setup-multilang.sh
-RUN ./build-chondro/scripts/setup-openbangla-keyboard.sh
+RUN chmod +x /build-chondro/scripts/system/*
+RUN ./build-chondro/scripts/system/setup-base-config.sh
+RUN ./build-chondro/scripts/system/setup-virtualization.sh
+RUN ./build-chondro/scripts/system/setup-multilang.sh
+RUN ./build-chondro/scripts/system/setup-openbangla-keyboard.sh
 
-RUN ./build-chondro/scripts/install-syncthing.sh && \
-    ./build-chondro/scripts/install-browser-chromium.sh && \
-    ./build-chondro/scripts/remove-browser-firefox.sh
+RUN ./build-chondro/scripts/system/install-syncthing.sh && \
+    ./build-chondro/scripts/system/install-browser-chromium.sh && \
+    ./build-chondro/scripts/system/remove-browser-firefox.sh
 
 
 ## Cleanup
