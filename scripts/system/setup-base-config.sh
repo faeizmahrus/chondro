@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -ouex pipefail
 
+# Install core dnf plugins
+dnf install -y dnf-plugins-core
+
 # Install rpmfusion repos
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf update -y
