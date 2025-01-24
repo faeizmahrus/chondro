@@ -14,8 +14,8 @@ FROM quay.io/fedora/fedora-silverblue:41
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 ## Copy stuff
-COPY scripts /tmp/scripts
-COPY files /tmp/files
+COPY scripts/ /tmp/scripts/
+COPY files/ /tmp/files/
 
 ## Run stuff
 RUN chmod +x /tmp/scripts/*
