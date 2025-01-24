@@ -19,4 +19,5 @@ RUN ./build-chondro/scripts/system/install-syncthing.sh && \
 ## Cleanup
 RUN rm -rf /build-chondro
 ## Commit to Registry
-RUN ostree container commit && bootc container lint
+RUN ostree container commit 
+#&& bootc container lint
