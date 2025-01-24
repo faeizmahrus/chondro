@@ -10,7 +10,7 @@ dnf update -y
 dnf install -y rpmfusion-free-release rpmfusion-nonfree-release --allowerasing
 dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
 dnf config-manager setopt fedora-cisco-openh264.enabled=1
-dnf update -y @core
+dnf install -y \*appstream-data
 
 # Install codec stuff
 dnf install -y ffmpeg libdvdcss --allowerasing
@@ -26,4 +26,4 @@ dnf install -y fish zsh nu tcsh #Install shells
 dnf install -y git distrobox syncthing #Install extras
 
 # Refresh stuff that relies on GStreamer
-dnf update -y @multimedia
+dnf update @core @multimedia
