@@ -14,19 +14,19 @@ FROM quay.io/fedora/fedora-silverblue:41
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 ## Copy stuff
-COPY scripts/ /tmp/scripts/
-COPY files/ /tmp/files/
+COPY ./scripts/ /tmp/scripts/
+COPY ./files/ /tmp/files/
 
 ## Run stuff
 RUN chmod +x /tmp/scripts/*
-RUN /tmp/scripts/setup-base-config.sh
-RUN /tmp/scripts/setup-virtualization.sh
-RUN /tmp/scripts/setup-multilang.sh
-RUN /tmp/scripts/setup-openbangla-keyboard.sh
+RUN ./tmp/scripts/setup-base-config.sh
+RUN ./tmp/scripts/setup-virtualization.sh
+RUN ./tmp/scripts/setup-multilang.sh
+RUN ./tmp/scripts/setup-openbangla-keyboard.sh
 
-RUN /tmp/scripts/install-syncthing.sh && \
-    /tmp/scripts/install-browser-chromium.sh && \
-    /tmp/scripts/remove-browser-firefox.sh
+RUN ./tmp/scripts/install-syncthing.sh && \
+    ./tmp/scripts/install-browser-chromium.sh && \
+    ./tmp/scripts/remove-browser-firefox.sh
 
 ## Commit to Registry
 RUN ostree container commit && bootc container lint
