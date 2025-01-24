@@ -9,7 +9,7 @@ RUN chmod +x /build-chondro/scripts/system/* && \
     ./build-chondro/scripts/system/setup-base-config.sh && \
     ./build-chondro/scripts/system/setup-virtualization.sh
 RUN ./build-chondro/scripts/system/setup-multilang.sh && \
-    ./build-chondro/scripts/system/setup-openbangla-keyboard.sh
+    dnf install -y "/build-chondro/files/ibus-openbangla_3.0.0-F41.rpm"
 
 RUN ./build-chondro/scripts/system/install-syncthing.sh && \
     ./build-chondro/scripts/system/install-browser-chromium.sh && \
