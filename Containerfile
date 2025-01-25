@@ -28,4 +28,4 @@ RUN rm -rf /build-chondro
 
 ## Commit to Registry
 RUN ostree container commit
-#RUN tree /usr/lib/modules && bootc container lint
+RUN tree /usr/lib/modules && bootc container lint
