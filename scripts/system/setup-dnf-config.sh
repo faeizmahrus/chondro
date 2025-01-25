@@ -8,4 +8,4 @@ echo "minrate = 262144" >> /etc/dnf/dnf.conf
 echo "timeout = 5" >> /etc/dnf/dnf.conf
 
 # Install core dnf plugins
-dnf install -y dnf-plugins-core
+dnf install -y dnf-plugins-core --allowerasing
