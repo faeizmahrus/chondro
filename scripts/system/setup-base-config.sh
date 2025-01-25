@@ -3,7 +3,7 @@ set -ouex pipefail
 
 # Install rpmfusion repos
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf update -y
+dnf update -y --allowerasing
 dnf install -y rpmfusion-free-release rpmfusion-nonfree-release --allowerasing
 dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
 dnf config-manager setopt fedora-cisco-openh264.enabled=1
@@ -26,4 +26,4 @@ dnf install -y fish zsh nu tcsh #Install shells
 dnf install -y git curl wget distrobox #Install extras
 
 # Updoot
-dnf update -y
+dnf update -y --allowerasing
