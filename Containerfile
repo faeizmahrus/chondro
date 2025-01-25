@@ -26,6 +26,9 @@ RUN ./build-chondro/scripts/apps/install-browser-chromium.sh
 ## Cleanup
 RUN rm -rf /build-chondro
 
+## Update
+RUN rpm-ostree update
+
 ## Commit to Registry
 RUN ostree container commit
 #RUN tree /usr/lib/modules && bootc container lint
