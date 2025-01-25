@@ -14,7 +14,7 @@ RUN ./build-chondro/scripts/system/setup-virtualization.sh
 
 ## Install fonts and obk
 RUN ./build-chondro/scripts/system/setup-multilang.sh
-RUN dnf install -y "/build-chondro/files/ibus-openbangla_3.0.0-F41.rpm"
+RUN dnf install -y "/build-chondro/files/ibus-openbangla_3.0.0-F41.rpm" --allowerasing
 
 ## Install extra stuff
 RUN ./build-chondro/scripts/apps/install-syncthing.sh
