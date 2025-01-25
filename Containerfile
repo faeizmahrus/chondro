@@ -21,7 +21,7 @@ RUN ./build-chondro/scripts/apps/install-syncthing.sh
 RUN ./build-chondro/scripts/apps/install-browser-chromium.sh
 
 ## Enable comeposefs
-#RUN ./build-chondro/scripts/system/setup-composefs.sh
+RUN ./build-chondro/scripts/system/setup-composefs.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro
