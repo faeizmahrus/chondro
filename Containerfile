@@ -20,11 +20,12 @@ RUN ./build-chondro/scripts/system/setup-multilang.sh && \
 RUN ./build-chondro/scripts/apps/install-syncthing.sh && \
     ./build-chondro/scripts/apps/install-browser-chromium.sh
 
-## Fix comeposefs error
-RUN ./build-chondro/scripts/fixes/fix-composefs-error.sh
+## Enable comeposefs
+#RUN ./build-chondro/scripts/system/setup-composefs.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro
 
 ## Commit to Registry
-RUN ostree container commit && tree /usr/lib/modules && bootc container lint
+RUN ostree container commit
+#RUN tree /usr/lib/modules && bootc container lint
