@@ -10,13 +10,13 @@ dnf update -y --exclude=kernel\*
 dnf install -y \*appstream-data 
 
 # Install codec stuff
-dnf install -y ffmpeg libdvdcss 
+dnf install -y ffmpeg libdvdcss --allowerasing
 
 # Install Intel Drivers
 dnf install -y intel-media-driver libva-intel-driver 
 
 # Install AMD Drivers
-dnf install -y mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld 
+dnf install -y mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld --allowerasing
 
 # Install additional firmware
 dnf install -y \*-firmware 
