@@ -11,6 +11,7 @@ RUN ./build-chondro/scripts/apps/remove-browser-firefox.sh
 RUN ./build-chondro/scripts/apps/remove-gnome-bloat.sh
 RUN ./build-chondro/scripts/system/setup-base-config.sh
 RUN ./build-chondro/scripts/system/setup-virtualization.sh
+RUN ./build-chondro/scripts/system/setup-snap.sh
 
 ## Install fonts and obk
 RUN ./build-chondro/scripts/system/setup-multilang.sh
@@ -19,8 +20,8 @@ RUN dnf install -y "/build-chondro/files/ibus-openbangla_3.0.0-F41.rpm" --allowe
 ## Install extra stuff
 RUN ./build-chondro/scripts/apps/install-syncthing.sh
 RUN ./build-chondro/scripts/apps/install-browser-chromium.sh
-RUN ./build-chondro/scripts/apps/install-vscode.sh
-RUN ./build-chondro/scripts/apps/install-onlyoffice.sh
+#RUN ./build-chondro/scripts/apps/install-vscode.sh
+#RUN ./build-chondro/scripts/apps/install-onlyoffice.sh
 
 ## Enable comeposefs
 RUN ./build-chondro/scripts/system/setup-composefs.sh
