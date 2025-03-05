@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
- rpm-ostree install syncthing distrobox git android-tools
+#!/bin/bash
+rpm-ostree install syncthing distrobox git android-tools

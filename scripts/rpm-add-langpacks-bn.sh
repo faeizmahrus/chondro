@@ -1,2 +1,2 @@
-#!/usr/bin/end bash
+#!/bin/bash
 rpm-ostree install langpacks-bn "../../../files/ibus-openbangla_3.0.0-F41.rpm"

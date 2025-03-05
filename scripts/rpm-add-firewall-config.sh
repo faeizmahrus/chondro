@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
+#!/bin/bash
 rpm-ostree install firewall-config
