@@ -5,30 +5,19 @@ COPY scripts/ /build-chondro/scripts/
 COPY files/ /build-chondro/files/
 
 ## Configure base
-RUN chmod +x /build-chondro/scripts/*/*
-RUN ./build-chondro/scripts/system/setup-dnf-config.sh
-RUN ./build-chondro/scripts/apps/remove-browser-firefox.sh
-RUN ./build-chondro/scripts/apps/remove-gnome-bloat.sh
-RUN ./build-chondro/scripts/system/setup-base-config.sh
-RUN ./build-chondro/scripts/system/setup-virtualization.sh
-RUN ./build-chondro/scripts/system/setup-snap.sh
-
-## Install fonts and obk
-RUN ./build-chondro/scripts/system/setup-multilang.sh
-RUN dnf install -y "/build-chondro/files/ibus-openbangla_3.0.0-F41.rpm" --allowerasing
-
-## Install extra stuff
-RUN ./build-chondro/scripts/apps/install-syncthing.sh
-RUN ./build-chondro/scripts/apps/install-browser-chromium.sh
-#RUN ./build-chondro/scripts/apps/install-vscode.sh
-#RUN ./build-chondro/scripts/apps/install-onlyoffice.sh
-
-## Enable comeposefs
-RUN ./build-chondro/scripts/system/setup-composefs.sh
+RUN chmod +x /build-chondro/scripts/*
+RUN repo-add-rpmfusion.sh
+RUN rpm-add-codecs.sh
+RUN rpm-add-intel-drivers.sh
+RUN rpm-add-mesa-drivers.sh
+RUN rpm-add-langpacks-bn.sh
+RUN rpm-add-shells.sh
+RUN rpm-add-utils.sh
+RUN rpm-swap-browsers.sh
+RUN rpm-add-firewall-config.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro
 
 ## Commit to Registry
 RUN ostree container commit
-RUN tree /usr/lib/modules && bootc container lint
