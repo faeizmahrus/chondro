@@ -6,15 +6,15 @@ COPY files/ /build-chondro/files/
 
 ## Configure base
 RUN chmod +x /build-chondro/scripts/*
-RUN repo-add-rpmfusion.sh
-RUN rpm-add-codecs.sh
-RUN rpm-add-intel-drivers.sh
-RUN rpm-add-mesa-drivers.sh
-RUN rpm-add-langpacks-bn.sh
-RUN rpm-add-shells.sh
-RUN rpm-add-utils.sh
-RUN rpm-swap-browsers.sh
-RUN rpm-add-firewall-config.sh
+RUN /build-chondro/scripts/repo-add-rpmfusion.sh
+RUN /build-chondro/scripts/rpm-add-codecs.sh
+RUN /build-chondro/scripts/rpm-add-intel-drivers.sh
+RUN /build-chondro/scripts/rpm-add-mesa-drivers.sh
+RUN /build-chondro/scripts/rpm-add-langpacks-bn.sh
+RUN /build-chondro/scripts/rpm-add-shells.sh
+RUN /build-chondro/scripts/rpm-add-utils.sh
+RUN /build-chondro/scripts/rpm-swap-browsers.sh
+RUN /build-chondro/scripts/rpm-add-firewall-config.sh
 
 ## Cleanup
 RUN rm -rf /build-chondro
